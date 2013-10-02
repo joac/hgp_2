@@ -1,0 +1,19 @@
+{% load staticfiles %}
+{% include 'base_layout.html' %}
+{% block body %}
+<div id="gallery">
+  <div class="photo loading">
+    <img title="{{ pic.description }}" id=photo>
+  </div>
+  <div class=controls_container>
+    <div class=controls>
+      <a href=# id=prev class=button_r><img src="{% static 'left.png' %}"></a>
+      <a href=# id=next class=button_l><img src="{% static 'right.png' %}"></a>
+    </div>
+  </div>
+  <div class=footer id=nombre>
+    {{ pic.title }}
+  </div>
+</div>
+
+{% endblock %}

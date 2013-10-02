@@ -1,0 +1,147 @@
+body {
+    font-family: helvetica;
+    font-size: 14px;
+}
+a, h1, h2, h3 {
+    color: #757575;
+    }
+h1, h2 {
+    }
+h1 {
+    }
+h2 {
+    }
+a {
+    text-decoration: none;
+}
+a:hover
+{
+    color: #000000; 
+}
+.menu a
+{
+    padding: 0.8em;   
+}
+
+.page {
+    margin: 1px auto;
+    width: 900px;
+    padding: 5px 50px 5px 50px; 
+    background: white;
+    }
+
+.entries {
+    list-style: none;
+    margin: 0;
+    padding 0;
+    }
+.entries li { 
+    margin: 0.8em 1.2em; 
+    }
+.entries li h2 { 
+    margin-left: -1em; 
+    }
+
+.add-entry { 
+    font-size: 0.9em; 
+    border-bottom: 1px solid #ccc; 
+    }
+.add-entry dl { 
+    font-weight: bold; 
+    }
+
+.metanav { 
+    text-align: right;
+    font-size: 0.8em; 
+    padding: 0.3em;
+    margin-bottom: 1em;
+    background: #fafafa;
+    }
+
+.header {
+    height: 70px;
+    position: relative;
+    }
+.logo {
+    text-align: left;
+    font-size: 20px; 
+    width:220px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+.menu { 
+    text-align: right;
+    font-size: 12px; 
+    padding: 0.3em;
+    position: absolute;
+    bottom: 22px;
+    right:0px;
+    width:600px;
+    }
+
+.flash { 
+    background: #CEE5F5;
+    padding: 0.5em;
+    border: 1px solid #AACBE2; 
+    }
+.error{ 
+    background: #F0D6D6; 
+    padding: 0.5em;
+    }
+.photo {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.photo.loading {
+    background: url(spinner.gif) no-repeat center center;
+    background-color: #fafafa;
+    width: 900px;
+    height: 596px;
+}
+.load_error {
+    padding-top: 10px;
+    width: 900px;
+    height: 596px;
+    text-align: center;
+}
+
+#error_text {
+    position: relative;
+    top: 50%;
+}
+
+.tags {
+}
+
+.controls_container {
+    position: relative;
+    height: 15px;
+
+}
+.controls {
+    position: absolute;
+    right: 0;
+    width: 44px;
+}
+
+.button_l {
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    right: 0px;
+}
+.button_r {
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    left: 0px;
+}
+
+#gallery {
+    width: 900px;
+    margin: auto;
+}
+
+
