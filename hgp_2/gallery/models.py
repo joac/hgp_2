@@ -36,7 +36,10 @@ class Album(models.Model):
         return self.name
 
     def get_first_resource(self):
-        return self.resources.order_by('albumlink__order')[0]
+        return self.get_all_resources[0]
+
+    def get_all_resources(self):
+        return self.resources.order_by('albumlink__order')
 
 
 class AlbumLink(models.Model):

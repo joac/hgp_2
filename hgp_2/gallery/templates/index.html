@@ -1,6 +1,6 @@
 {% extends 'base_layout.html' %}
 {% load staticfiles %}
-{% block pagetitle %}{{ album.title }}{% endblock %}
+{% block pagetitle %}{{ album.name.title }}{% endblock %}
 {% block body %}
 <div id="gallery">
   <div class="photo">
@@ -17,8 +17,12 @@
   </div>
   <div class=controls_container>
     <div class=controls>
-      <a href=# id=prev class=button_r><img src="{% static 'left.png' %}"></a>
-      <a href=# id=next class=button_l><img src="{% static 'right.png' %}"></a>
+      {% if resources.has_previous %}
+      <a href="{% url 'gallery.views.for_album' album.name resources.previous_page_number %}" id="prev" class="button_r"><img src="{% static 'left.png' %}"></a>
+      {% endif %}
+      {% if resources.has_next %}
+      <a href="{% url 'gallery.views.for_album' album.name resources.next_page_number %}" id="next" class="button_l"><img src="{% static 'right.png' %}"></a>
+      {% endif %}
     </div>
   </div>
   <div class=footer id=nombre>
