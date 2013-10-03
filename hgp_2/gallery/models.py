@@ -29,11 +29,14 @@ class Tag(models.Model):
 
 class Album(models.Model):
     name = models.CharField(max_length=60)
-    photos = models.ManyToManyField('MediaResource', through='AlbumLink', blank=True)
+    resources = models.ManyToManyField('MediaResource', through='AlbumLink', blank=True)
     date_created = models.DateTimeField()
 
     def __unicode__(self):
         return self.name
+
+    def get_first_resource(self):
+        return self.resources.order_by('albumlink__order')[0]
 
 
 class AlbumLink(models.Model):

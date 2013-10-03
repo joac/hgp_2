@@ -1,9 +1,14 @@
+{% extends 'base_layout.html' %}
 {% load staticfiles %}
-{% include 'base_layout.html' %}
+{% block pagetitle %}{{ album.title }}{% endblock %}
 {% block body %}
 <div id="gallery">
-  <div class="photo loading">
-    <img title="{{ pic.description }}" id=photo>
+  <div class="photo">
+    {% if res.photo %}
+    <img title="{{ res.description }}" 
+    src="{{ res.photo.file.url }}"
+    id=photo>
+    {% endif %}
   </div>
   <div class=controls_container>
     <div class=controls>

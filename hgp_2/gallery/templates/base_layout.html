@@ -18,11 +18,11 @@
             <img src="{% static 'logo.png' %}"/>
         </div>
         <div class=menu>
-            <a href="#">PORTFOLIO</a>
-            <a href="#">CONDOR ANDINO</a>
-            <a href="#">VINTAGE</a>
-            <a href="#">PRENSA</a>
-            <a href="#">CONTACTO</a>
+          <a href="{% url 'gallery.views.for_album' 'portfolio'%}">PORTFOLIO</a>
+            <a href="{% url 'gallery.views.for_album' 'condor'%}">CONDOR ANDINO</a>
+            <a href="{% url 'gallery.views.for_album' 'vintage'%}">VINTAGE</a>
+            <a href="{% url 'gallery.views.for_album' 'prensa'%}">PRENSA</a>
+            <a href="{% url 'gallery.views.for_album' 'contacto' %}">CONTACTO</a>
         </div>
     </div>
     {% block body %}{% endblock %}
