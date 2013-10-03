@@ -8,6 +8,11 @@
     <img title="{{ res.description }}" 
     src="{{ res.photo.file.url }}"
     id=photo>
+    {% elif res.video %}
+    <iframe src="{{ res.video.link }}" width="800" height="600" 
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe> 
+     
     {% endif %}
   </div>
   <div class=controls_container>
@@ -17,7 +22,7 @@
     </div>
   </div>
   <div class=footer id=nombre>
-    {{ pic.title }}
+    {{ res.title }}
   </div>
 </div>
 
