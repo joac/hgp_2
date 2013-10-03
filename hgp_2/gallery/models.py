@@ -1,4 +1,5 @@
 from django.db import models
+from embed_video.fields import EmbedVideoField
 
 
 class MediaResource(models.Model):
@@ -15,8 +16,7 @@ class Photo(MediaResource):
 
 
 class Video(MediaResource):
-    link = models.URLField()
-
+    link = EmbedVideoField()
 
 class Tag(models.Model):
     name = models.CharField(max_length=60)

@@ -1,5 +1,6 @@
 {% extends 'base_layout.html' %}
 {% load staticfiles %}
+{% load embed_video_tags %}
 {% block pagetitle %}{{ album.name.title }}{% endblock %}
 {% block body %}
 <div id="gallery">
@@ -9,10 +10,7 @@
     src="{{ res.photo.file.url }}"
     id=photo>
     {% elif res.video %}
-    <iframe src="{{ res.video.link }}" width="800" height="600" 
-      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-    </iframe> 
-     
+      {{ res.video.link|embed:'800x600' }}
     {% endif %}
   </div>
   <div class=controls_container>
