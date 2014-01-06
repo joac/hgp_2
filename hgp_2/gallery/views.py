@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Album
 
 def index(request):
-    return for_album(request, 'portfolio')
+    return for_album(request, 'home')
 
 
 def for_album(request, album, page=1):

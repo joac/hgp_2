@@ -4,7 +4,7 @@
   "model": "gallery.album", 
   "fields": {
     "date_created": "2013-10-03T03:58:13Z", 
-    "name": "vintage"
+    "name": "burning_man"
   }
 },
 {
@@ -12,7 +12,7 @@
   "model": "gallery.album", 
   "fields": {
     "date_created": "2013-10-03T03:58:28Z", 
-    "name": "condor"
+    "name": "music"
   }
 },
 {
@@ -20,23 +20,7 @@
   "model": "gallery.album", 
   "fields": {
     "date_created": "2013-10-03T03:59:07Z", 
-    "name": "portfolio"
+    "name": "home"
   }
 },
-{
-  "pk": 4, 
-  "model": "gallery.album", 
-  "fields": {
-    "date_created": "2013-10-03T03:59:21Z", 
-    "name": "prensa"
-  }
-},
-{
-  "pk": 5, 
-  "model": "gallery.album", 
-  "fields": {
-    "date_created": "2013-10-03T03:59:33Z", 
-    "name": "contacto"
-  }
-}
 ]

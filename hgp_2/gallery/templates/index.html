@@ -3,29 +3,20 @@
 {% load embed_video_tags %}
 {% block pagetitle %}{{ album.name.title }}{% endblock %}
 {% block body %}
-<div id="gallery">
+<div class="fake-div">
+  
   <div class="photo">
-    {% if res.photo %}
-    <img title="{{ res.description }}" 
-    src="{{ res.photo.file.url }}"
-    id=photo>
-    {% elif res.video %}
-      {{ res.video.link|embed:'800x600' }}
-    {% endif %}
+    {% for res in album.get_all_resources() %}
+        <div class="piece">
+        {% if res.photo %}
+        <img title="{{ res.description }}" 
+        src="{{ res.photo.file.url }}"
+        alt="{{ res.photo.title }}"
+        />
+        {% elif res.video %}
+            {{ res.video.link|embed:'800x600' }}
+        {% endif %}
+      </div>
+     {% endfor %}
   </div>
-  <div class=controls_container>
-    <div class=controls>
-      {% if resources.has_previous %}
-      <a href="{% url 'gallery.views.for_album' album.name resources.previous_page_number %}" id="prev" class="button_r"><img src="{% static 'left.png' %}"></a>
-      {% endif %}
-      {% if resources.has_next %}
-      <a href="{% url 'gallery.views.for_album' album.name resources.next_page_number %}" id="next" class="button_l"><img src="{% static 'right.png' %}"></a>
-      {% endif %}
-    </div>
-  </div>
-  <div class=footer id=nombre>
-    {{ res.title }}
-  </div>
-</div>
-
 {% endblock %}
