@@ -4,9 +4,7 @@
 {% block pagetitle %}{{ album.name.title }}{% endblock %}
 {% block body %}
 <div class="fake-div">
-  
-  <div class="photo">
-    {% for res in album.get_all_resources() %}
+    {% for res in album.get_all_resources %}
         <div class="piece">
         {% if res.photo %}
         <img title="{{ res.description }}" 
@@ -18,5 +16,5 @@
         {% endif %}
       </div>
      {% endfor %}
-  </div>
+</div>
 {% endblock %}

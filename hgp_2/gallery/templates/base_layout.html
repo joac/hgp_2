@@ -9,6 +9,7 @@
 <link rel=stylesheet type=text/css href="{% static 'style.css' %}">
 <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
 <script type=text/javascript src="{% static 'jquery.js' %}"></script>
+<script type=text/javascript src="{% static 'portfolio.pack.min.js' %}"></script>
 </head>
 <body>
     <div class="main-container">
@@ -16,7 +17,7 @@
         
         <div class="brand-ribbon">
         <div class="brand">
-          <img class="logo" src="{% static 'brand_inverse.png' %}"/>
+          <a href='/'><img class="logo" src="{% static 'brand_inverse.png' %}"/></a>
         </div>
       </div>
         <div class="brand"></div>
@@ -29,14 +30,8 @@
         </div>
       </div>
     <div class="content">
-      <div class="fake-div">
         {% block body %}{% endblock %}
-
-        <div class="piece"><img src='ciudad.jpg'/></div>
-        <div class="piece"> <img src='camp.jpg' /></div>
-        <div class="piece"></div>
-        </div>
-      </div>
+    </div>
 
     </div>
         <div class="footer">
