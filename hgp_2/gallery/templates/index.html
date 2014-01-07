@@ -3,18 +3,28 @@
 {% load embed_video_tags %}
 {% block pagetitle %}{{ album.name.title }}{% endblock %}
 {% block body %}
-<div class="fake-div">
+<div id="portfolio">
     {% for res in album.get_all_resources %}
-        <div class="piece">
         {% if res.photo %}
         <img title="{{ res.description }}" 
-        src="{{ res.photo.file.url }}"
+        data-src="{{ res.photo.file.url }}"
         alt="{{ res.photo.title }}"
         />
-        {% elif res.video %}
-            {{ res.video.link|embed:'800x600' }}
         {% endif %}
-      </div>
      {% endfor %}
 </div>
+<script>
+    $(document).ready(function() {
+        var $p = $("#portfolio"),
+            p = $p.portfolio({
+              height: '600px',
+              width: '100%',
+              showArrows: true,
+              //lightbox: true,
+            });
+        p.init();
+        p.css({"overflow-x": 'hidden'})
+        
+    });
+</script>
 {% endblock %}
