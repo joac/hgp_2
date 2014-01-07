@@ -14,6 +14,7 @@ html, body {
 
 .heading {
     width: 100%;
+    margin-bottom: 12px;
 }
 
 div.#portfolio {
@@ -28,14 +29,13 @@ div.#portfolio {
 
 .header-menu {
     margin-top: 12px;
-    margin-bottom: 12px;
     margin-right: 12px;
     text-align: right;
     font-size: 16px;
 }
 
 .content {
-    padding-bottom: 56px;
+    padding-bottom: 60px;
 }
 
 .header-menu a {

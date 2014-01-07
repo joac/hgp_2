@@ -15,14 +15,33 @@
 </div>
 <script>
     $(document).ready(function() {
+        var $footer = $(".footer"), $heading = $('.heading'), $window = $(window);
+        function get_height() {
+            var content_height = $window.outerHeight() - 
+                ($footer.outerHeight(true) + $heading.outerHeight(true)) + 'px';
+            return content_height;
+        };
         var $p = $("#portfolio"),
             p = $p.portfolio({
-              height: '600px',
+              height: get_height(),
               width: '100%',
               showArrows: true,
               //lightbox: true,
             });
         p.init();
+        var gallery = $p;
+        $(window).resize(function() {
+            var content_height = get_height();
+            console.log(content_height);
+            $(gallery).css({
+                height: content_height,
+                "max-height": content_height,
+            });
+            $(gallery).find('img').css({height: content_height});
+            $('.gallery-arrow-right').css({height: content_height}); 
+            $('.gallery-arrow-left').css({height: content_height}); 
+            $('.spinner-container').css({height: content_height}); 
+        });
         p.css({"overflow-x": 'hidden'})
         
     });
