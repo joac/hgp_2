@@ -31,7 +31,7 @@ div.#portfolio {
     margin-top: 12px;
     margin-right: 12px;
     text-align: right;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .content {
@@ -41,6 +41,8 @@ div.#portfolio {
 .header-menu a {
     margin-top: 5px;
     text-decoration: none;
+    margin-right: 3px;
+    margin-left: 3px;
     color: black;
 }
 
@@ -67,10 +69,14 @@ div.#portfolio {
     bottom: 0;
     margin: 12px 0px 12px 0px;
     height: 36px;
-    font-size: 14px;
+    font-size: 12px;
     font-family: Helvetica;
     color: white;
     background-color: black;
+}
+.footer span {
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 div {
