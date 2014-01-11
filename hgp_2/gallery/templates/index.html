@@ -43,7 +43,14 @@
             $('.spinner-container').css({height: content_height}); 
         });
         p.css({"overflow-x": 'hidden'})
-        
+        $(document).on('mousewheel', function (e) {
+            if (e.originalEvent.wheelDelta < 0) {
+              p.next()
+            } else {
+              p.prev()}
+        });
+
+
     });
 </script>
 {% endblock %}
