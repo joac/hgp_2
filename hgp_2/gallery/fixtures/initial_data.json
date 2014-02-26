@@ -4,7 +4,9 @@
   "model": "gallery.album", 
   "fields": {
     "date_created": "2013-10-03T03:58:13Z", 
-    "name": "burning_man"
+    "name": "burning_man",
+    "show_on_navbar": true,
+    "nav_order": 1
   }
 },
 {
@@ -12,7 +14,9 @@
   "model": "gallery.album", 
   "fields": {
     "date_created": "2013-10-03T03:58:28Z", 
-    "name": "music"
+    "name": "music",
+    "show_on_navbar": true,
+    "nav_order": 2
   }
 },
 {
@@ -20,7 +24,9 @@
   "model": "gallery.album", 
   "fields": {
     "date_created": "2013-10-03T03:59:07Z", 
-    "name": "home"
+    "name": "home",
+    "show_on_navbar": true,
+    "nav_order": 3
   }
 }
 ]
