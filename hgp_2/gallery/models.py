@@ -63,7 +63,7 @@ class Album(models.Model):
 
     def get_first_resource(self):
         resources = self.get_all_resources()
-        if resources:
+        if resources.count():
             return resources[0]
         return None
 
