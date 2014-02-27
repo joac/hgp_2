@@ -1,6 +1,6 @@
 {% extends 'base_layout.html' %}
 {% block body %}
-<div id="portfolio">
+<div class="index-slideshow">
   <div id='slider' class='looper xfade' data-looper="go" data-speed='700'>
     <div class='lopper-inner'>
   {% for res in album.get_all_resources %}
@@ -32,5 +32,4 @@
         });
     });
 </script>
-
 {% endblock %}

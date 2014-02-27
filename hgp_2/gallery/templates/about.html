@@ -1,0 +1,55 @@
+{% extends 'base_layout.html' %}
+{% load staticfiles %}
+{% block pagetitle %}About{% endblock %}
+{% block body %}
+<div class="about-container">
+<div class="about">
+
+<h2> Contacto </h2>
+<p class="contact-data">
+arieljacobsen@gmail.com
+<br/>
++54 9 11 5455 5535
+<br/>
+<a href="http://www.facebook.com/jacobsen.ariel">Facebook</a> | Twitter | Tumblr
+</p>
+<h2> Sobre Mi </h2>
+<p>
+Me gustan las personas y las formas de expresión que cada individuo adopta al exteriorizar sus emociones. Poder capturar esos gestos es un gran desafío. Ésta fue una de las razones por la cual comencé mis estudios en fotografía 8 años atrás.
+</p>
+<p>
+Los escenarios donde desarrollo mi trabajo cambian según la ocasión.
+Desde lo más íntimo de un ciclo musical acústico, hasta un recital o festival multitudinario. Y de la música pasamos a otros eventos como aquellos donde algo mágico sucede entre dos seres que deciden contraer matrimonio. Pienso que las emociones atraviesan a las personas sin importar el contexto y el momento. Y en esos momentos cruciales, es donde estoy, para poder capturarlos. 
+</p>
+</div>
+<div class="about-photo">
+  <img class="photo" src="{%static 'about2.jpg'%}"/>
+</div>
+<div class="clear"></div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var $footer = $(".footer"), $heading = $('.heading'), $window = $(window);
+        function get_height() {
+            var content_height = $window.outerHeight() - 
+                ($footer.outerHeight(true) + $heading.outerHeight(true));
+            return content_height;
+        };
+          $photo = $('.photo');
+          if(get_height() > $(".about").outerHeight(true)){
+            $photo.height(get_height() + 'px');
+          } else {
+            $photo.height($(".about").outerHeight(true) + 'px');
+          };
+        $(window).resize(function() {
+          console.log(get_height());
+          console.log($photo.outerHeight(true));
+          if(get_height() > $(".about").outerHeight(true)){
+            $photo.height(get_height() + 'px');
+          }
+        });
+    });
+</script>
+
+{% endblock %}

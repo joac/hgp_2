@@ -12,12 +12,16 @@ def index(request):
     except Album.DoesNotExist:
         return render(request, 'error.html', {'album': album})
 
-    print album
     return render(request, 'index.html', {
         'albums': albums,
         'album': album,
     })
 
+def about(request):
+    albums =  Album.objects.filter(show_on_navbar=True).order_by('-nav_order')
+    return render(request, 'about.html', {
+        'albums': albums,
+    })
 
 def for_album(request, album, page=1):
     albums =  Album.objects.filter(show_on_navbar=True).order_by('-nav_order')
