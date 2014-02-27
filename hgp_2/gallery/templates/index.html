@@ -1,17 +1,20 @@
 {% extends 'base_layout.html' %}
-{% load staticfiles %}
-{% load embed_video_tags %}
-{% block pagetitle %}{{ album.name.title }}{% endblock %}
 {% block body %}
 <div id="portfolio">
-    {% for res in album.get_all_resources %}
+  <div id='slider' class='looper xfade' data-looper="go" data-speed='700'>
+    <div class='lopper-inner'>
+  {% for res in album.get_all_resources %}
         {% if res.photo %}
-        <img title="{{ res.description }}" 
-        data-src="{{ res.photo.file.url }}"
+        <div class="item">
+        <img class='photo'title="{{ res.description }}" 
+        src="{{ res.photo.file.url }}"
         alt="{{ res.photo.title }}"
         />
+        </div>
         {% endif %}
-     {% endfor %}
+    {% endfor %}
+    </div>
+  </div>
 </div>
 <script>
     $(document).ready(function() {
@@ -21,36 +24,13 @@
                 ($footer.outerHeight(true) + $heading.outerHeight(true)) + 'px';
             return content_height;
         };
-        var $p = $("#portfolio"),
-            p = $p.portfolio({
-              height: get_height(),
-              width: '100%',
-              showArrows: true,
-              //lightbox: true,
-            });
-        p.init();
-        var gallery = $p;
+        $(".photo").height(get_height());
+        $("#slider").width($(".photo").first().outerWidth() + 'px');
         $(window).resize(function() {
-            var content_height = get_height();
-            console.log(content_height);
-            $(gallery).css({
-                height: content_height,
-                "max-height": content_height,
-            });
-            $(gallery).find('img').css({height: content_height});
-            $('.gallery-arrow-right').css({height: content_height}); 
-            $('.gallery-arrow-left').css({height: content_height}); 
-            $('.spinner-container').css({height: content_height}); 
+          $(".photo").height(get_height());
+          $("#slider").width($(".photo").first().outerWidth() + 'px');
         });
-        p.css({"overflow-x": 'hidden'})
-        $(document).on('mousewheel', function (e) {
-            if (e.originalEvent.wheelDelta < 0) {
-              p.next()
-            } else {
-              p.prev()}
-        });
-
-
     });
 </script>
+
 {% endblock %}

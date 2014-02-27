@@ -5,7 +5,18 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Album
 
 def index(request):
-    return for_album(request, 'home')
+    albums =  Album.objects.filter(show_on_navbar=True).order_by('-nav_order')
+
+    try:
+        album = Album.objects.get(slug='home')
+    except Album.DoesNotExist:
+        return render(request, 'error.html', {'album': album})
+
+    print album
+    return render(request, 'index.html', {
+        'albums': albums,
+        'album': album,
+    })
 
 
 def for_album(request, album, page=1):
@@ -27,7 +38,7 @@ def for_album(request, album, page=1):
 
 
     res = resources[0]
-    return render(request, 'index.html', {
+    return render(request, 'album.html', {
         'albums': albums,
         'album': album,
         'res': res,
