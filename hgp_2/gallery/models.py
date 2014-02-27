@@ -63,7 +63,7 @@ class Album(models.Model):
 
     def get_first_resource(self):
         resources = self.get_all_resources()
-        if resources is not None:
+        if resources:
             return resources[0]
         return None
 
